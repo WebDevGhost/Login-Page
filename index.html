@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+    <title>WEBSITE • Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), 
+                        url('assets/background.jpg') center/cover no-repeat;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .login-body {
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 15px;
+            background: rgba(20, 20, 20, 0.5);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .login-body img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+        }
+        .login-body h4 {
+            margin: 15px 0 5px;
+        }
+        .login-body p {
+            margin: 0 0 20px;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .input-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        .input-bar img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .input-bar input {
+            flex: 1;
+            background: none;
+            border: none;
+            color: white;
+            outline: none;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .buttons button {
+            flex: 1;
+            padding: 10px;
+            background-color: rgba(30, 30, 30, 0.8);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .buttons button:hover {
+            transform: scale(0.95);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+        }
+        .login-body small {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 12px;
+            color: #888;
+        }
+        .icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .icons img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease, border-radius 0.2s ease;
+        }
+        .icons img:first-child:hover, .icons img:last-child:hover {
+            transform: scale(0.9);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+        }
+        .icons img:nth-child(2):hover {
+            transform: scale(0.9);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-body">
+        <img src="assets/logo.png" alt="Logo">
+        <h4>Login</h4>
+        <p>Continue with credentials, an account or sign up</p>
+
+        <div class="input-bar">
+            <img src="assets/username.png" alt="Icon">
+            <input type="text" id="username" placeholder="Username">
+        </div>
+        <div class="input-bar">
+            <img src="assets/password.png" alt="Icon">
+            <input type="password" id="password" placeholder="Password">
+        </div>
+
+        <div class="buttons">
+            <button onclick="login()">Login</button>
+            <button onclick="redirect('SIGN UP PAGE GOES HERE')">Sign up</button>
+        </div>
+
+        <small>Or continue with</small>
+
+        <div class="icons">
+            <img src="assets/google.png" alt="Google" onclick="redirect('URL GOES HERE')">
+            <img src="assets/microsoft.png" alt="Microsoft" onclick="redirect('URL GOES HERE')">
+            <img src="assets/facebook.png" alt="Facebook" onclick="redirect('URL GOES HERE')">
+        </div>
+    </div>
+
+    <script>
+        const validCredentials = {
+            username: "USERNAME GOES HERE",
+            password: "PASSWORD GOES HERE"
+        };
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === validCredentials.username && password === validCredentials.password) {
+                redirect('REDIRECTION PAGE GOES HERE');
+            } else {
+                alert("Incorrect credentials. Please try again.");
+            }
+        }
+
+        function redirect(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
