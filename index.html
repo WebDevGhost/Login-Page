@@ -7,6 +7,15 @@
 
     <title>WEBSITE • Login</title>
     <style>
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            box-sizing: border-box;
+        }
         body {
             margin: 0;
             padding: 0;
@@ -102,15 +111,36 @@
             cursor: pointer;
             transition: transform 0.2s ease, box-shadow 0.3s ease, border-radius 0.2s ease;
         }
-        .icons img:first-child:hover, .icons img:last-child:hover {
+        .icons img:hover {
             transform: scale(0.9);
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
         }
-        .icons img:nth-child(2):hover {
-            transform: scale(0.9);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-            border-radius: 6px;
+
+        @media (max-width: 768px) {
+            .login-body {
+                max-width: 300px;
+                padding: 15px;
+            }
+            .login-body img {
+                width: 45px;
+                height: 45px;
+            }
+            .login-body h4 {
+                font-size: 18px;
+            }
+            .login-body p {
+                font-size: 12px;
+            }
+            .input-bar {
+                padding: 8px;
+            }
+            .buttons button {
+                padding: 8px;
+            }
+            .icons img {
+                width: 25px;
+                height: 25px;
+            }
         }
     </style>
 </head>
